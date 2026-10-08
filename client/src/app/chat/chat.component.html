@@ -1,0 +1,15 @@
+<button id="chat-toggle" aria-label="Open chat" (click)="open = !open">💬</button>
+@if (open) {
+  <div id="chat">
+    <div class="chat-head">Ask Acme <button aria-label="Close" (click)="open = false">×</button></div>
+    <div id="messages" #messagesEl>
+      @for (m of messages; track $index) {
+        <div class="msg" [class.user]="m.role === 'user'" [class.bot]="m.role === 'assistant'">{{ m.content }}</div>
+      }
+    </div>
+    <form id="chat-form" (ngSubmit)="send()">
+      <input name="message" [(ngModel)]="input" placeholder="Ask about shipping, hours…" autocomplete="off" required>
+      <button>Send</button>
+    </form>
+  </div>
+}

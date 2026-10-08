@@ -1,0 +1,33 @@
+<header>
+  <h1>☕ Acme Coffee Roasters</h1>
+  <nav><a href="#products">Products</a><a href="#about">About</a><a href="#visit">Visit</a></nav>
+</header>
+
+<section class="hero">
+  <h2>Small-batch coffee, roasted with care</h2>
+  <p>Fresh beans from Portland, delivered to your door.</p>
+  <a class="btn" href="#products">Shop beans</a>
+</section>
+
+<section id="products">
+  <h2>Our Coffees</h2>
+  <div class="cards">
+    @for (p of products; track p.name) {
+      <div class="card"><h3>{{ p.name }}</h3><p>{{ p.description }}</p><b>${{ p.price }}</b></div>
+    }
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p>Founded in 2015, we roast ethically sourced beans in Portland, Oregon. Ask our assistant anything!</p>
+</section>
+
+<section id="visit">
+  <h2>Visit Us</h2>
+  <p>Two cafés in Portland. Questions? Use the chat in the corner.</p>
+</section>
+
+<footer>© Acme Coffee Roasters (dummy site)</footer>
+
+<app-chat />
